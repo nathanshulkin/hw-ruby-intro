@@ -3,15 +3,45 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  total = 0
+  for i in arr
+    total += i
+  end
+
+  return total 
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  big1 = 0
+  big2 = 0
+
+  if arr.length() == 0
+    return 0
+  end
+  if arr.length() == 1
+    return arr[0]
+  end
+
+  arr = arr.sort
+  arr = arr.reverse
+
+  big1 = arr[0]
+  big2 = arr[1]
+  
+  return big1 + big2
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  index = 1
+  if arr.length() <= 1
+    return false
+  end
+  for i in arr
+    if i + arr[index] == n
+      return true
+    end
+  end
+  return false
 end
 
 # Part 2
@@ -33,3 +63,4 @@ end
 class BookInStock
 # YOUR CODE HERE
 end
+
