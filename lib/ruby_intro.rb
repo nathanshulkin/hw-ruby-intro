@@ -47,15 +47,30 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name.to_s
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  s = s.downcase
+  if s.length() == 0
+    return false
+  elsif s[0].match?(/[[:alpha:]]/) == false
+    return false
+  elsif s[0] == "a" || s[0] == "e" || s[0] == "i" || s[0] == "u"
+    return false
+  end
+  return true
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+  if s.length() == 0
+    return false
+  elsif s.match?(/[^01]/)
+    return false
+  else
+  return true
+  end
 end
 
 # Part 3
