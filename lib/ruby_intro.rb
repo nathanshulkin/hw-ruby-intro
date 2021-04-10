@@ -81,10 +81,10 @@ class BookInStock
 
   def initialize(isbn, price)
     if isbn.empty?
-      raise ArgumentError.new("nope")
+      raise ArgumentError.new("isbn cannot be empty")
     end
     if price <= 0
-      raise ArgumentError.new("no")
+      raise ArgumentError.new("price cannot be less than or equal to zero")
     end
 
     @@isbn = isbn
