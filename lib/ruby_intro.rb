@@ -63,7 +63,6 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
   if s.length() == 0
     return false
   elsif s.match?(/[^01]/)
@@ -76,6 +75,47 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+
+  @@isbn = ""
+  @@price = 0.0
+
+  def initialize(isbn, price)
+    if isbn.empty?
+      raise ArgumentError.new("nope")
+    end
+    if price <= 0
+      raise ArgumentError.new("no")
+    end
+
+    @@isbn = isbn
+    @@price = price
+  end
+
+  def isbn
+    isbn = @@isbn
+  end
+
+  def price
+    price = @@price
+  end
+
+  def isbn=(isbn)
+    @@isbn = isbn
+  end
+
+  def price=(price)
+    @@price = price
+  end
+
+  def price_as_string
+    if @@price.to_s.length == 2
+      return "\$" + @@price.to_s + ".00"
+    elsif @@price.to_s.length == 3
+      return "\$" + @@price.to_s + "0"
+    else
+      return "\$" + @@price.to_s
+    end
+  end
+
 end
 
