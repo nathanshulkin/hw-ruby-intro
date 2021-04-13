@@ -65,7 +65,7 @@ end
 def binary_multiple_of_4? s
   if s.length() == 0
     return false
-  elsif s.match?(/[^01]/)
+  elsif s.match?(/[^0$^1$]/)
     return false
   else
   return true
